@@ -5,6 +5,7 @@ import UserProfile from '../user/UserProfile';
 import UserOrgs from '../user/UserOrgs';
 import UserRepos from '../user/UserRepos';
 import Loading from '../navigation/Loading';
+import SearchError from './SearchError';
 
 class SearchResult extends Component {
     constructor(props){
@@ -21,6 +22,7 @@ class SearchResult extends Component {
     }
 
     getQueryResults(){
+        //Reset search state
         this.setState({
             loading: true,
             error: undefined,
@@ -30,11 +32,13 @@ class SearchResult extends Component {
         getUserData(this.props.match.params.user)
         .then((res) => {
             if(res){
+                
                 if(res.status === undefined){
                     this.setState({
                         user: res.user,
                         orgs: res.orgs,
                     })
+                    //only search for repos if user exists
                     getRepos(this.props.match.params.user)
                     .then(repos => {
                         this.setState({
@@ -43,6 +47,7 @@ class SearchResult extends Component {
                         })
                     })
                 } else {
+                    //Error handling
                     this.setState({
                         error: res,
                         loading: false
@@ -50,6 +55,7 @@ class SearchResult extends Component {
                 }
 
             } else {
+                //Error handling
                 this.setState({
                     error: {data: { message: "Couldn't receive server response."}},
                     loading: false
@@ -59,6 +65,7 @@ class SearchResult extends Component {
     }
 
     componentDidUpdate(){
+        //if statement avoids update loop
         if(this.state.query !== this.props.match.params.user){
             this.getQueryResults()
         }
@@ -72,6 +79,7 @@ class SearchResult extends Component {
             return(
                 <Loading />
            )
+
         } else if (this.state.error === undefined && this.state.loading === false){
             return (
                 <div>
@@ -80,16 +88,11 @@ class SearchResult extends Component {
                     <UserRepos repos={this.state.repos}/>
                 </div>
             )
+
         }
         else if (this.state.error !== undefined && this.state.loading === false){
             return (
-                <div>
-                    <h3>Something went wrong!</h3>
-                    <p>
-                        {this.state.error.status ? this.state.error.status + ' - ' : null}
-                        {this.state.error.data.message}
-                    </p>
-                </div>
+                <SearchError error={this.state.error} />
             )
         }
         else {
