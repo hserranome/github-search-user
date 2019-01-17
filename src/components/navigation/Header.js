@@ -25,7 +25,7 @@ const Header = () => (
             </Link>
         </HeaderTitle>
         <HeaderSubtitle>
-            made as an interview showcase for Keytree.
+            made as an interview showcase.
         </HeaderSubtitle>
     </HeaderContainer>
 )
