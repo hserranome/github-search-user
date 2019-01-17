@@ -14,7 +14,7 @@ The Github API has a 30 requests per minute rate limit. This can be upgraded to 
 REACT_APP_GIT_TOKEN=YOURTOKENHERE
 ```
 
-## Bonus completed
+## Completed bonus
 * Use ES6 syntax including arrow functions, destructuring and async/await
 * Adding a spinner when information is loading
 * Deal with errors coming from the backend
@@ -23,7 +23,7 @@ REACT_APP_GIT_TOKEN=YOURTOKENHERE
 * Show common tools used for you daily development environment (linters, code formatter, git workflow, docker and so on)
 * Deploy the project [somewhere](https://github.com/facebook/create-react-app)
 
-## Bonus uncompleted :(
+## Uncompleted bonus
 * Adding types with Flow or Typescript
 * Some sort of Unit Test
 * Some sort of Integration Test
