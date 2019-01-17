@@ -4,11 +4,11 @@ A live demo can be found [here](https://githubusersearch.netlify.com/).
 
 ## Running locally
 1. Clone the repository
-2. Run 'npm install' inside the folder and wait for the installation to finish
+2. Run "npm install" inside the folder and wait for the installation to finish
 3. Running "npm run start" will start the app at port 3000
 
 ## Rate limits
-The Github API has a 30 requests per minute rate limit. This can be upgraded to 5000 requests per minute by using an authentication. This can be done by assigning the enviroment variable "REACT_APP_GIT_TOKEN". To do so locally, add a ".env" file at the root with the token like so: 
+The Github API has a 30 requests per minute rate limit. This can be upgraded to 5000 requests per minute by using an authentication token. This can be done by assigning the enviroment variable "REACT_APP_GIT_TOKEN". To do so locally, add a ".env" file at the root with the token like so: 
 
 ```
 REACT_APP_GIT_TOKEN=YOURTOKENHERE
