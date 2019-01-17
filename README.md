@@ -1,6 +1,6 @@
 # Github User Search
 This is a small web app created for a React interview.
-A live demo can be found [here](https://github.com/facebook/create-react-app).
+A live demo can be found [here](https://githubusersearch.netlify.com/).
 
 ## Running locally
 1. Clone the repository
@@ -21,7 +21,7 @@ REACT_APP_GIT_TOKEN=YOURTOKENHERE
 * Having a nice UI using a components library (Bootstrap?)
 * Divide the application in different pages and use a router
 * Show common tools used for you daily development environment (linters, code formatter, git workflow, docker and so on)
-* Deploy the project [somewhere](https://github.com/facebook/create-react-app)
+* Deploy the project [somewhere](https://githubusersearch.netlify.com/)
 
 ## Uncompleted bonus
 * Adding types with Flow or Typescript
