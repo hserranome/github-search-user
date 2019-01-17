@@ -5,7 +5,6 @@ import { GlobalStyle } from './components/styles/styles';
 import AppContainer from './components/containers/AppContainer';
 
 import Index from './pages/Index';
-import SearchUser from './components/search/SearchUser';
 
 class App extends Component {
   render() {
@@ -14,7 +13,6 @@ class App extends Component {
         <AppContainer>
           <GlobalStyle />
           <Route path="/" component={Index} />
-          <Route exact path="/user/:user" component={SearchUser} />
         </AppContainer>
       </Router>
     );
