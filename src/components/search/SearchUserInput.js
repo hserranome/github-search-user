@@ -16,6 +16,7 @@ class SearchUsername extends Component {
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
+    //Form handling
     handleInput(event){
         this.setState({
             input: event.target.value
@@ -24,10 +25,13 @@ class SearchUsername extends Component {
 
     handleSubmit(e){
         e.preventDefault()
+        //Set the current input to query state and submit
+        //This causes redirect to search page component
         this.setState({
             query: this.state.input,
             submitted: true
         }, () => {
+            //Reset submitted to allow another search
             this.setState({
                 submitted: false,
             })
